@@ -88,7 +88,7 @@ function loadTask() {
 
 document.getElementById("clearAll").addEventListener("click", () => {
   const tasks = JSON.parse(localStorage.getItem("TodoList")) || [];
-  if (tasks !== "") {
+  if (tasks.length > 0) {
     Swal.fire({
       title: "Yakin?",
       text: "Semua task akan dihapus!",
