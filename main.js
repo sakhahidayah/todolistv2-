@@ -35,11 +35,11 @@ function loadTask() {
     taskText.textContent = taskObj.text;
 
     const btnGroup = document.createElement("div");
-
+    btnGroup.className = "flex flex-row";
     // Button Done
     const doneBtn = document.createElement("button");
-    doneBtn.textContent = "✔️ Done";
-    doneBtn.className = "bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 mr-2";
+    doneBtn.textContent = "✔️";
+    doneBtn.className = "bg-blue-500 text-white text-sm px-3 py-1 rounded hover:bg-blue-600 mr-2 flex items-center";
     doneBtn.onclick = () => {
       tasks[index].done = !tasks[index].done;
       localStorage.setItem("TodoList", JSON.stringify(tasks));
@@ -49,8 +49,8 @@ function loadTask() {
 
     // Button Delete
     const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "🗑️ Hapus";
-    deleteBtn.className = "bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600";
+    deleteBtn.textContent = "🗑️";
+    deleteBtn.className = "bg-red-500 text-white text-sm px-3 py-1 rounded hover:bg-red-600 flex items-center";
     deleteBtn.onclick = () => {
       tasks.splice(index, 1);
       localStorage.setItem("TodoList", JSON.stringify(tasks));
