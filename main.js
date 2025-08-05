@@ -87,18 +87,28 @@ function loadTask() {
 }
 
 document.getElementById("clearAll").addEventListener("click", () => {
-  Swal.fire({
-    title: "Yakin?",
-    text: "Semua task akan dihapus!",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonText: "Ya, hapus semua",
-    cancelButtonText: "Batal",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      localStorage.clear();
-      taskList.innerHTML = "";
-      Swal.fire("Terhapus!", "Semua task sudah dihapus.", "success");
-    }
-  });
+  const tasks = JSON.parse(localStorage.getItem("TodoList")) || [];
+  if (tasks !== "") {
+    Swal.fire({
+      title: "Yakin?",
+      text: "Semua task akan dihapus!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Ya, hapus semua",
+      cancelButtonText: "Batal",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.clear();
+        taskList.innerHTML = "";
+        Swal.fire("Terhapus!", "Semua task sudah dihapus.", "success");
+      }
+    });
+  } else {
+    Swal.fire({
+      title: "Gagal!",
+      text: "Tidak ada task/tugas pada list!!",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+  }
 });
