@@ -83,7 +83,7 @@ document.getElementById("clearAll").addEventListener("click", () => {
 function showToast(message, color) {
   Toastify({
     text: message,
-    duration: 3000,
+    duration: 1500,
     gravity: "top",
     position: "right",
     style: {
