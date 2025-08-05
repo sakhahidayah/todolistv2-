@@ -4,17 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TodoList</title>
+    <link rel="shortcut icon" href="img/note.png" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-md">
+      <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">📝 Todo List</h1>
 
-  <body>
-    <form id="taskForm" action="">
-      <label for="taskInput">Task</label>
-      <input type="text" name="" id="taskInput" />
-      <button type="submit">Submit</button>
-      <button id="clearAll" type="button">Clear All</button>
-    </form>
-    <ul id="taskList"></ul>
+      <form id="taskForm" class="flex flex-col gap-4">
+        <input type="text" id="taskInput" placeholder="Tambahkan tugas..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <div class="flex justify-between gap-2">
+          <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition duration-200">Tambah Tugas</button>
+          <button id="clearAll" type="button" class="w-full bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition duration-200">Hapus Semua</button>
+        </div>
+      </form>
+
+      <ul id="taskList" class="mt-6 space-y-2 text-gray-700"></ul>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>
