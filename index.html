@@ -12,6 +12,10 @@
   </head>
   <body id="body" class="bg-gray-100 min-h-screen flex items-center justify-center transition-colors duration-300">
     <div id="backgroundTodo" class="bg-white rounded-xl transition-colors duration-300 shadow-xl flex flex-col relative p-8 w-full max-w-md">
+      <div class="absolute top-3 left-3">
+        <p class="font-normal text-slate-500 text-xs" id="currentDate"></p>
+        <p class="font-normal text-slate-500 text-xs" id="currentTime"></p>
+      </div>
       <button id="darkMode" class="self-end px-2 text-2xl py-1 bg-slate-500 hover:bg-slate-400 transition-all duration-300 rounded-full absolute -top-2 -right-3">🌛</button>
       <button id="lightMode" class="self-end px-1 text-2xl py-1 bg-gray-200 hover:bg-gray-100 hidden transition-all duration-300 rounded-full absolute -top-2 -right-3">🌞</button>
       <h1 id="tittle" class="text-2xl font-bold text-center text-gray-800 mb-6 transition-colors duration-300">📝 Todo List</h1>

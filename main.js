@@ -113,3 +113,28 @@ lightMode.addEventListener("click", () => {
   lightMode.classList.toggle("hidden");
   darkMode.classList.toggle("hidden");
 });
+
+function updateDateTime() {
+  const date = new Date();
+  const day = date.getDate();
+  const month = date.getMonth();
+  const year = date.getFullYear();
+
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const second = date.getSeconds();
+  const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+
+  const fullDate = day + " " + monthNames[month] + " " + year;
+
+  const fullTime = hours.toString().padStart(2, "0") + ":" + minutes.toString().padStart(2, "0") + ":" + second.toString().padStart(2, "0");
+
+  const currentDate = document.getElementById("currentDate");
+  const currentTime = document.getElementById("currentTime");
+
+  currentDate.textContent = fullDate;
+  currentTime.textContent = fullTime;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
