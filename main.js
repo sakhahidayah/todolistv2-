@@ -3,6 +3,7 @@ const taskForm = document.getElementById("taskForm");
 const taskList = document.getElementById("taskList");
 
 loadTask();
+showToast("Ingin melakukan apa hari ini ?", "#14B8A6");
 
 taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -70,11 +71,9 @@ function loadTask() {
 document.getElementById("clearAll").addEventListener("click", () => {
   const tasks = JSON.parse(localStorage.getItem("TodoList")) || [];
   if (tasks.length > 0) {
-    if (confirm("Yakin ingin menghapus semua task?")) {
-      localStorage.clear();
-      taskList.innerHTML = "";
-      showToast("Semua task telah dihapus!", "#c0392b");
-    }
+    localStorage.clear();
+    taskList.innerHTML = "";
+    showToast("Semua task telah dihapus!", "#c0392b");
   } else {
     showToast("Tidak ada task untuk dihapus!", "#e67e22");
   }
@@ -83,7 +82,7 @@ document.getElementById("clearAll").addEventListener("click", () => {
 function showToast(message, color) {
   Toastify({
     text: message,
-    duration: 1500,
+    duration: 1900,
     gravity: "top",
     position: "right",
     style: {
@@ -92,3 +91,25 @@ function showToast(message, color) {
     },
   }).showToast();
 }
+
+// Dark Mode & Light Mode
+
+const darkMode = document.getElementById("darkMode");
+const lightMode = document.getElementById("lightMode");
+const body = document.getElementById("body");
+const backgroundTodo = document.getElementById("backgroundTodo");
+const tittle = document.getElementById("tittle");
+darkMode.addEventListener("click", () => {
+  body.classList.toggle("bg-[#1C1C1C]");
+  backgroundTodo.classList.toggle("bg-[#2C3539]");
+  tittle.classList.toggle("text-white");
+  lightMode.classList.toggle("hidden");
+  darkMode.classList.toggle("hidden");
+});
+lightMode.addEventListener("click", () => {
+  body.classList.toggle("bg-[#1C1C1C]");
+  backgroundTodo.classList.toggle("bg-[#2C3539]");
+  tittle.classList.toggle("text-white");
+  lightMode.classList.toggle("hidden");
+  darkMode.classList.toggle("hidden");
+});

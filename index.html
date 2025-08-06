@@ -10,10 +10,11 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </head>
-  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
-    <div class="bg-white rounded-xl shadow-xl p-8 w-full max-w-md">
-      <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">📝 Todo List</h1>
-
+  <body id="body" class="bg-gray-100 min-h-screen flex items-center justify-center transition-colors duration-300">
+    <div id="backgroundTodo" class="bg-white rounded-xl transition-colors duration-300 shadow-xl flex flex-col relative p-8 w-full max-w-md">
+      <button id="darkMode" class="self-end px-2 text-2xl py-1 bg-slate-500 hover:bg-slate-400 transition-all duration-300 rounded-full absolute -top-2 -right-3">🌛</button>
+      <button id="lightMode" class="self-end px-1 text-2xl py-1 bg-gray-200 hover:bg-gray-100 hidden transition-all duration-300 rounded-full absolute -top-2 -right-3">🌞</button>
+      <h1 id="tittle" class="text-2xl font-bold text-center text-gray-800 mb-6 transition-colors duration-300">📝 Todo List</h1>
       <form id="taskForm" class="flex flex-col gap-4">
         <input type="text" id="taskInput" placeholder="Tambahkan tugas..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
         <div class="flex justify-between gap-2">
@@ -23,6 +24,7 @@
       </form>
 
       <ul id="taskList" class="mt-6 space-y-2 text-gray-700"></ul>
+      <a href="https://www.instagram.com/skhhdyhhhh_/" target="_blank" class="self-end text-[10px] hover:text-slate-500 hover:cursor-pointer font-serif text-slate-400">By @skhhidayahhhh_</a>
     </div>
 
     <script src="main.js"></script>
